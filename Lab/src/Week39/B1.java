@@ -12,6 +12,7 @@ public class B1 {
 		printTab(aud);
 		ledigPlasser(aud);
 		prosentPlasser(aud);
+		smitteVern(aud);
 	}
 	public static void printTab(boolean[][] tab) {
 		for (int i=0;i<tab.length;i++) {
@@ -64,6 +65,19 @@ public class B1 {
 			}
 		}
 		
+	}
+	public static void smitteVern(boolean[][]tab) {
+		String melding = "Ingen smitte brudd";
+		for (int i=0;i<tab.length;i++) {
+			for(int j=0;j<tab[i].length;j++) {
+				boolean plassEn = false;
+				if (plassEn==true && tab[i][j]==true) {
+					melding = "Smittevern brudd";
+				}
+				plassEn = tab[i][j];
+			}
+		}
+		System.out.print(melding);
 	}
 	
 }
